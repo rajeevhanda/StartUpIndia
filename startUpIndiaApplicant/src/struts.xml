@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.multipart.maxSize" value="100000000" />
+	<package name="pack" extends="struts-default">
+		<action name="getIndexAction">
+			<result>/jsps/index.jsp</result>
+		</action>
+		<action name="addDetailsAction" class="com.startUp.applicant.actions.PopulateDetailsAction" method="execute">
+			<result name="success">/jsps/addDetails.jsp</result>
+		</action>
+		<action name="addContactDetailsAction" class="com.startUp.applicant.actions.PopulateDetailsAction" method="execute">
+			<result name="success">/jsps/addContactDetails.jsp</result>
+		</action>
+		<action name="getRegisterAction">
+			<result>/jsps/register.jsp</result>
+		</action>
+		<action name="registerAction" class="com.startUp.applicant.actions.RegisterAction">
+			<result name="input">/jsps/home.jsp</result>
+			<result name="success">/jsps/index.jsp</result>
+		</action>
+		<action name="addPersonalDetailsAction" class="com.startUp.applicant.actions.AddPersonalDetailsAction" method="addPersonalDetails">
+			<result name="success">/jsps/addDetails.jsp</result>
+			<result name="input">/jsps/addDetails.jsp</result>
+			<result name="fail">jsps/addDetails.jsp</result>
+		</action>
+		<action name="loginAction" class="com.startUp.applicant.actions.LoginAction">
+			<result name="success">/jsps/index.jsp</result>
+			<result name="input">/jsps/home.jsp</result>
+		</action>
+		<action name="getLoginAction">
+			<result>/jsps/login.jsp</result>
+		</action>
+		<!-- <action name="ind">
+			<result>addDetails.jsp</result>
+		</action> -->
+		<action name="addContactDetailsAction" class="com.startUp.applicant.actions.AddContactDetailsAction" method="addContactDetails">
+			<result name="success">/jsps/addContactDetails.jsp</result>
+			<result name="input">/jsps/addContactDetails.jsp</result>
+		</action>
+		<action name="addAddressDetailsAction" class="com.startUp.applicant.actions.AddAddressDetailsAction" method="addAddressDetails">
+			<result name="success">/jsps/addDetails.jsp</result>
+			<result name="input">/jsps/addDetails.jsp</result>
+		</action>
+		<action name="assetDetailsAction">
+			<result>/jsps/addAssetDetail.jsp</result>
+		</action>
+		<action name="addAssetDetailsAction" class="com.startUp.applicant.actions.AddAssetDetailsAction">
+			<result name="success">/jsps/addAssetDetail.jsp</result>
+			<result name="input">/jsps/addAssetDetail.jsp</result>
+		</action>
+		<action name="businessDetailAction" method="populateBusinesses" class="com.startUp.applicant.actions.PopulateDetailsAction">
+			<result name="success">/jsps/addBusinessDetail.jsp</result>
+		</action>
+		<action name="addBusinessDetailsAction" class="com.startUp.applicant.actions.AddBusinessDetailsAction">
+			<result name="success">/jsps/index.jsp</result>
+			<result name="input">/jsps/addBusinessDetail.jsp</result>
+		</action>
+		<action name="qualifyAction" class="com.startUp.applicant.actions.PopulateDetailsAction" method="populateInstitutes">
+		<result name="success">/jsps/addQualification.jsp</result>
+		</action>
+		<action name="qualificationAction" class="com.startUp.applicant.actions.QualificationAction" method="setQualification">
+			<result name="success">/jsps/addQualification.jsp</result>
+			<result name="input">/jsps/addQualification.jsp</result>
+			<result name="input">/jsps/addQualification.jsp</result>
+		</action>
+		
+		<action name="certifyAction" class="com.startUp.applicant.actions.AddCertificationAction" method="addCertification" >
+			<result name="success">/jsps/addQualification.jsp</result>
+			<result name="fail">/jsps/addQualification.jsp</result>
+		</action>
+		<action name="getUploadDocuments">
+			<result>/jsps/uploadDocuments.jsp</result>
+		</action>
+		<action name="uploadDocumentsAction"
+			class="com.startUp.applicant.actions.UploadDocumentsAction">
+			<result name="success">/jsps/index.jsp</result>
+			<result name="input">/jsps/uploadDocuments.jsp</result>
+			<result name="error">/jsps/uploadDocuments.jsp</result>
+		</action>
+		<action name="getLogoutAction">
+			<result>/jsps/logout.jsp</result>
+		</action>
+		<action name="logoutAction">
+			<result>/jsps/login.jsp</result>
+		</action>
+	</package>
+</struts>

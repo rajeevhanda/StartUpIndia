@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+       http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+	<persistence-unit name="startUpIndiaUnit" transaction-type="JTA">
+
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<jta-data-source>java:/OracleDS</jta-data-source>
+		<class>com.startUp.model.Account</class>
+		<class>com.startUp.model.City</class>
+		<class>com.startUp.model.State</class>
+		<class>com.startUp.model.PersonalDetails</class>
+		<class>com.startUp.model.ContactDetails</class>
+		<class>com.startUp.model.AddressDetails</class>
+		<class>com.startUp.model.Nationality</class>
+		<class>com.startUp.model.Institute</class>
+		<class>com.startUp.model.AssetDetails</class>
+		<class>com.startUp.model.BusinessDetails</class>
+		<class>com.startUp.model.Business</class>
+		<class>com.startUp.model.CertificationDetails</class>
+		<class>com.startUp.model.Documents</class>
+		<class>com.startUp.model.Course</class>
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.OracleDialect" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="update"></property>
+		</properties>
+	</persistence-unit>
+</persistence>
